@@ -8,8 +8,8 @@
     "disk_size": 40960,
 
     "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.1-server-amd64.iso",
-    "iso_checksum": "ca2531b8cd79ea5b778ede3a524779b9",
-    "iso_checksum_type": "md5",
+    "iso_checksum": "401c5f6666fe2879ac3a9a3247b487723410cf88",
+    "iso_checksum_type": "sha1",
 
     "boot_command": [
       "<esc><esc><enter><wait>",
