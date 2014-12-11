@@ -41,13 +41,23 @@
     "output": "build/ubuntu-14.04-amd64.box",
     "type": "vagrant"
   }],
-  "provisioners": [{
-    "type": "shell",
-    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-    "scripts": [
-      "scripts/vagrant.sh",
-      "scripts/vboxguest.sh",
-      "scripts/compact.sh"
-    ]
-  }]
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "scripts": [
+        "scripts/vagrant.sh",
+        "scripts/vboxguest.sh",
+        "scripts/compact.sh"
+      ]
+    },
+    {
+      "type": "salt-masterless",
+      "bootstrap_args": "git v2014.1.13",
+      "local_state_tree": "salt/state",
+      "local_pillar_roots": "salt/pillar",
+      "minion_config": "salt/minions/precise-base"
+    }
+  ]
+
 }
